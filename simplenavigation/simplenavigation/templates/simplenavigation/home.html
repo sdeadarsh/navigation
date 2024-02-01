@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect to Different Pages Based on the Day of the Week</title>
+    <style>
+        /* Centering the content vertically and horizontally */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Background color for the entire page */
+            font-family: Arial, sans-serif; /* Choose a suitable font family */
+        }
+
+        /* CSS styles for the sign-up form */
+        form {
+            text-align: center;
+            background-color: #fff; /* Background color for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff; /* Blue color for the button */
+            color: #fff; /* Text color for the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+
+        /* CSS styles for the heading */
+        h3 {
+            display: block;
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+    </style>
+</head>
+<body>
+    <h3>Sign Up, then redirect to different pages based on the Day of the Week</h3>
+    <form method="post" action="{% url 'users:signup' %}">
+        {% csrf_token %}
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>

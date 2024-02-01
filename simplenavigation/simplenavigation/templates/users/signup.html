@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        /* Centering the content vertically and horizontally */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9; /* Background color for the entire page */
+            font-family: Arial, sans-serif; /* Choose a suitable font family */
+        }
+
+        /* CSS styles for the form container */
+        .form-container {
+            text-align: center;
+            background-color: #fff; /* Background color for the form container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px; /* Set a maximum width for the form container */
+        }
+
+        /* CSS styles for the form heading */
+        h1 {
+            font-size: 24px;
+            color: #007bff; /* Blue color for the heading */
+            margin-bottom: 20px; /* Add space below the heading */
+        }
+
+        /* CSS styles for form labels */
+        label {
+            display: block;
+            font-size: 16px;
+            color: #555; /* Slightly darker gray color for labels */
+            margin-bottom: 8px; /* Add space below labels */
+        }
+
+        /* CSS styles for form inputs */
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc; /* Light gray border for inputs */
+            border-radius: 5px;
+            margin-bottom: 20px; /* Add space below inputs */
+        }
+
+        /* CSS styles for the submit button */
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff; /* Blue color for the button */
+            color: #fff; /* Text color for the button */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth background color transition on hover */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Sign Up</h1>
+        <form method="post" action="{% url 'users:signup' %}">
+            {% csrf_token %}
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Sign up</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
